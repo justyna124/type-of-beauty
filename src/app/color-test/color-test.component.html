@@ -1,0 +1,67 @@
+<div class="container">
+  <div class="title  offset-md-3 pt-3"><h3>Sprawdź jakim jesteś typem urody</h3></div>
+  <div>
+    <button class="back" routerLink="/">WSTECZ</button>
+  </div>
+  <article class="col">
+    <div class="row">
+
+      <div class="col-12 col-md-8">
+        <input class="" style="border: #c86b85; border-radius: 2%" type='file'
+               (change)="onSelectFile($event)">
+        <div class="template justify-content-center align-items-center"
+             [ngStyle]="{'background': bgcolor}">
+          <img class=" img-fluid" [src]="url" height=""><br/>
+        </div>
+      </div>
+
+      <div class="col-12  col-md-4   flex-column text-center">
+        <p class=""> Jesteś chłodnym czy ciepłym typem urody ?</p>
+        <button (click)="changeBg('url(/src/app/images/silver.jpg)'); showColdColours()"
+                class="silver text-center mb-2 ">
+          SILVER
+        </button>
+        <button (click)="changeBg('url(/src/app/images/gold.jpg)'); showWarmColours()" class="gold text-center mb-2">
+          GOLD
+        </button>
+
+        <div class="btn-cold-types mb-2 " [hidden]="IsHiddenCold">
+          <button class="summer  " (click)="showSummerColours()">LATO</button>
+          <button class="winter " (click)="showWinterColours()">ZIMA</button>
+        </div>
+        <div class=" mb-2 " [hidden]="IsHiddenWarm">
+          <button class="spring" (click)="showSpringColours()">WIOSNA</button>
+          <button class="autumn" (click)="showAutumnColours()">JESIEŃ</button>
+        </div>
+        <!--<div class="col float-left">-->
+        <div class="season ">
+          <button class="" *ngFor="let color of colours.spring" [ngStyle]="{'background-color': color}"
+                  (click)="changeBg(color)" [hidden]="isHiddenSpring">
+            Try Me
+          </button>
+        </div>
+        <div class="season  justify-content-around mb-5 text-center">
+          <button class="" *ngFor="let color of colours.summer" [ngStyle]="{'background-color': color}"
+                  (click)="changeBg(color)" [hidden]="isHiddenSummer">
+            Try Me
+          </button>
+        </div>
+        <div class="season  justify-content-around mb-5 text-center">
+          <button class="" *ngFor="let color of colours.autumn" [ngStyle]="{'background-color': color}"
+                  (click)="changeBg(color)" [hidden]="isHiddenAutumn">
+            Try Me
+          </button>
+        </div>
+        <div class="season  justify-content-around mb-5 text-center">
+          <button class="" *ngFor="let color of colours.winter" [ngStyle]="{'background-color': color}"
+                  (click)="changeBg(color)" [hidden]="isHiddenWinter">
+            Try Me
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+  </article>
+
+</div>

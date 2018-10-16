@@ -10,7 +10,7 @@ import {WinterComponent} from './winter/winter.component';
 import {ColorTestComponent} from './color-test/color-test.component';
 import {HomeComponent} from './home/home.component';
 import {FormsModule} from '@angular/forms';
-import {FileSelectDirective} from 'ng2-file-upload';
+import {FileUploadModule} from 'ng2-file-upload';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
@@ -30,12 +30,12 @@ const appRoutes: Routes = [
     WinterComponent,
     ColorTestComponent,
     HomeComponent,
-    FileSelectDirective
   ],
   imports: [
     BrowserModule,
     FormsModule,
     NgbModule,
+    FileUploadModule,
     RouterModule.forRoot(appRoutes),
   ],
   providers: [],
